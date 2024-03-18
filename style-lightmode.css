@@ -1,0 +1,77 @@
+body.light {
+  background-color: var(--base-color);
+  color: var(--contrast-color);
+}
+
+body.light a,
+body.light a:visited {
+  color: var(--accent-color-3);
+}
+
+body.light a:hover,
+body.light a:active,
+body.light a:focus {
+  text-decoration: none;
+}
+
+body.light .lighter-background {
+  background-color: var(--gray-color-2);
+}
+
+body.light .top-line {
+  border-top: 1px solid var(--gray-color-2);
+}
+
+body.light .site-header a,
+body.light .site-header a:visited {
+  color: var(--contrast-color);
+  text-decoration: none;
+}
+
+body.light .site-header a:hover,
+body.light .site-header a:active,
+body.light .site-header a:focus {
+  text-decoration: underline;
+}
+
+body.light .icon-bar1,
+body.light .icon-bar2 {
+  background-color: var(--contrast-color);
+}
+
+body.light .navbar {
+  border-top: 1px solid var(--gray-color-2);
+}
+
+@media only screen and (min-width: 48em) {
+  body.light .navbar {
+    border-top: none;
+  }
+}
+
+/*=================================================
+  Formulář
+  ================================================= */
+
+body.light .form input {
+  color: var(--contrast-color);
+  border-bottom: 3px solid var(--accent-color-3);
+}
+
+body.light .form input::placeholder {
+  color: var(--contrast-color);
+}
+
+body.light form input[type="submit"] {
+  color: var(--base-color);
+  background-color: var(--accent-color-3);
+  border: none;
+}
+
+/*=================================================
+  Tlačítko "Zpět nahoru"
+  ================================================= */
+body.light .back-to-top {
+  background-color: var(--accent-color-3);
+  color: var(--base-color);
+}

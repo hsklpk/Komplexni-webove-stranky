@@ -1,0 +1,61 @@
+@media only screen and (min-width: 36em) {
+  .one-full {
+    flex-basis: 75%;
+    margin: auto;
+  }
+  .one-half {
+    flex-basis: 48.5%;
+  }
+  .one-third {
+    flex-basis: 31.33%;
+  }
+  .two-third {
+    flex-basis: 65.67%;
+  }
+  .one-fourth {
+    flex-basis: 22.75%;
+  }
+  .project-card {
+    flex-basis: calc((100% / 2) - 1rem);
+  }
+  .input-item {
+    width: 56%;
+  }
+  .hero-image {
+    height: 56vh;
+  }
+}
+
+@media only screen and (min-width: 48em) {
+  .site-header {
+    flex-wrap: nowrap;
+  }
+
+  .navbar-icon {
+    display: none;
+  }
+
+  .navbar {
+    display: block;
+    width: auto;
+    margin-top: 0;
+    border-top: none;
+  }
+
+  .navbar ul {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  .project-card {
+    flex-basis: calc((100% / 3) - 1rem);
+  }
+  .hero-image {
+    height: 80vh;
+  }
+  .back-to-top {
+    right: 2rem;
+    bottom: 2rem;
+  }
+}

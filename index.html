@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <!-- Jan Sklepek -->
+  <!-- jan.sklepek@karp-kv.cz -->
+  <!-- honza_25064 (Honza S.)-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Projekt 3 Komplexní webové stránky | Front-end Developer Akademie
+    </title>
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/e493b40a28.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS style -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-query.css" />
+    <link rel="stylesheet" href="style-lightmode.css" />
+  </head>
+  <body>
+    <!--
+      Záhlaví s navigací a přepínačem módu
+    -->
+    <header class="site-header" id="start">
+      <div class="logo">
+        <a href="/" target="_self">HSklpk</a>
+      </div>
+      <!-- Přepínač módu light/dark stránek-->
+      <div class="mode-switcher">
+        <input type="checkbox" class="checkbox" id="checkbox" />
+        <label for="checkbox" class="checkbox-label">
+          <i class="fas fa-sun"></i>
+          <i class="fas fa-moon"></i>
+          <span class="ball"></span>
+        </label>
+      </div>
+      <!-- Ikona pro mobil (Hamburger) -->
+      <div class="navbar-icon" id="menu-toggle">
+        <div class="icon-bar1"></div>
+        <div class="icon-bar2"></div>
+      </div>
+      <nav class="navbar" id="navbar">
+        <ul class="navbar-menu">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#login">Login</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!--
+      Hlavní obsah
+    -->
+    <main>
+      <!-- 
+          Hero banner
+        -->
+      <section class="hero-banner" id="hero-banner">
+        <div class="hero-container">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              I’m a freelance designer, specializing in logo design and brand
+              development. <a href="#about">More&nbsp;›</a>
+            </h1>
+          </div>
+        </div>
+      </section>
+      <!-- 
+          Ukázky práce (sekce Work)
+        -->
+      <section id="work" class="huge-top-space">
+        <div class="content-container">
+          <h2>Work</h2>
+          <!-- Projekty galerie -->
+          <div class="projects-container">
+            <div class="project-card">
+              <div class="project-image">
+                <img src="./images/Work-img-1.png" alt="My work image 1" />
+              </div>
+              <div class="project-title">
+                <h3>Königův mlýn</h3>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-image">
+                <img src="./images/Work-img-2.png" alt="My work image 2" />
+              </div>
+              <div class="project-title">
+                <h3>Franconia Shopping Center</h3>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-image">
+                <img src="./images/Work-img-3.png" alt="My work image 3" />
+              </div>
+              <div class="project-title">
+                <h3>Schloss Cafe</h3>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-image">
+                <img src="./images/Work-img-4.png" alt="My work image 4" />
+              </div>
+              <div class="project-title">
+                <h3>Motor Remont</h3>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-image">
+                <img src="./images/Work-img-5.png" alt="My work image 5" />
+              </div>
+              <div class="project-title">
+                <h3>Tenistip</h3>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-image">
+                <img src="./images/Work-img-6.png" alt="My work image 6" />
+              </div>
+              <div class="project-title">
+                <h3>Wildlife Shots</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 
+          Login s formulářem kde se kontroluje zadané heslo
+        -->
+      <section id="login" class="lighter-background">
+        <div class="content-container">
+          <div class="flex-grid">
+            <div class="one-third">
+              <h2>Login</h2>
+            </div>
+            <div class="two-third">
+              <!-- Přihlašovací formulář -->
+              <form class="form">
+                <div class="input-item">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your e-mail"
+                    required
+                  />
+                </div>
+                <div class="input-item">
+                  <input
+                    type="password"
+                    id="password1"
+                    name="password1"
+                    placeholder="Enter your password"
+                    required
+                    class="password-input"
+                  />
+                </div>
+                <div class="input-item">
+                  <input
+                    type="password"
+                    id="password2"
+                    name="password2"
+                    placeholder="Enter your password again"
+                    required
+                    class="password-input"
+                  />
+                </div>
+                <div class="input-item">
+                  <input type="checkbox" class="show-password" /> Show Password
+                </div>
+                <p class="result-text"></p>
+                <input type="submit" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="hero-image"></section>
+      <!-- 
+        About (pár slov o mě)
+        -->
+      <section id="about">
+        <div class="content-container">
+          <div class="flex-grid">
+            <div class="one-third">
+              <h2>About</h2>
+            </div>
+            <div class="two-third">
+              <p>
+                My name is Honza Sklepek. I’m a freelance designer from Karlovy
+                Vary, Czech Republic. I’m specializing in logo design and brand
+                development.
+              </p>
+              <p>
+                I also design websites or publications, usually for small
+                companies.
+              </p>
+              <!-- SKupina tlačítek pro snadnou navigaci -->
+              <div class="btn-group">
+                <a href="#hero-banner" class="btn-link">More&nbsp;›</a>
+                <a href="#contact" class="btn-link">Contact&nbsp;›</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- 
+      Zápatí a zároveň kontakty
+    -->
+    <footer id="contact" class="top-line">
+      <div class="content-container">
+        <div class="flex-grid">
+          <div class="one-third">
+            <h2>Contact</h2>
+          </div>
+          <div class="two-third">
+            <p>
+              Email me honza@sklepek.com<br />
+              or call +420 736 64 24 93
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <button class="back-to-top hidden" title="Zpět nahoru">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+  </body>
+</html>

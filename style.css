@@ -1,0 +1,409 @@
+:root {
+  --content-max-width: 1280px;
+  --base-color: #ffffff;
+  --contrast-color: #292c35;
+  --accent-color: #fac900;
+  --accent-color-2: #f5fa9e;
+  --accent-color-3: #0050c3; /* light mode */
+  --accent-color-4: #f24e1d;
+  --accent-color-5: #3bb76b;
+  --gray-color-1: #474c5c;
+  --gray-color-2: #d4d6de;
+}
+
+/* Reset - Box sizing */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Globální nastavení */
+
+body {
+  margin: 0;
+  background-color: var(--contrast-color);
+  color: var(--base-color);
+  transition: background 0.2s linear;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  font-size: 125%; /* 20px */
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.802rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.602rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: 1.424rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+h5 {
+  font-size: 1.266rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+h6 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+a,
+a:visited {
+  color: var(--accent-color);
+}
+
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Nastavení maximální šírky obsahu stránky */
+
+.content-container {
+  max-width: var(--content-max-width);
+  padding: 3.2rem 1rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.hero-container {
+  max-width: var(--content-max-width);
+  padding: 0 1rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.huge-top-space {
+  margin-top: 30vh;
+}
+
+.top-line {
+  border-top: 1px solid var(--gray-color-1);
+}
+
+.lighter-background {
+  background-color: var(--gray-color-1);
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn-link {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* ===============================================
+  Jednoduchý grid systém za pomocí flexboxu
+ =============================================== */
+
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.one-full,
+.one-half,
+.one-third,
+.two-third,
+.one-fourth {
+  flex-basis: 100%;
+  overflow: hidden;
+}
+
+/*=================================================
+  Záhlaví s navigací a přepínačem dark/light mode
+  ================================================= */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: var(--content-max-width);
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.site-header a,
+.site-header a:visited {
+  color: var(--base-color);
+  text-decoration: none;
+}
+
+.site-header a:hover,
+.site-header a:active,
+.site-header a:focus {
+  text-decoration: underline;
+}
+
+.logo a {
+  font-weight: 700;
+}
+
+/* Přepínač dark/light mode */
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox-label {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50px;
+  height: 26px;
+  padding: 5px;
+  border-radius: 50px;
+  background-color: var(--gray-color-1);
+  cursor: pointer;
+}
+
+.fa-moon {
+  font-size: 0.8rem; /* 16 px */
+  color: var(--accent-color);
+}
+
+.fa-sun {
+  font-size: 0.8rem; /* 16 px */
+  color: var(--accent-color-2);
+}
+
+.checkbox-label .ball {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--base-color);
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+/* Ikona pro mobil (Hamburger) */
+
+.navbar-icon {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.icon-bar1,
+.icon-bar2 {
+  width: 32px;
+  height: 3px;
+  margin: 8px 0;
+  background-color: var(--base-color);
+  transition: 0.4s;
+}
+
+.change .icon-bar1 {
+  transform: translate(0, 5px) rotate(-45deg);
+}
+
+.change .icon-bar2 {
+  transform: translate(0, -5px) rotate(45deg);
+}
+
+/* Navigace (hlavní menu) */
+
+.navbar {
+  display: none;
+  width: 100%;
+  margin-top: 1rem;
+  border-top: 1px solid var(--gray-color-1);
+}
+
+.navbar.active {
+  display: block;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar li {
+  padding: 1rem;
+  text-align: center;
+}
+
+/*=================================================
+  Ukázky práce (sekce Work) - Projekty galerie
+  ================================================= */
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.project-card {
+  flex-basis: 100%;
+  overflow: hidden;
+}
+
+.project-image {
+  width: auto;
+  height: 250px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  transition: all ease-in-out 0.5s;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.project-image img:hover {
+  transform: scale(2);
+  opacity: 0.75;
+}
+
+.project-title h3 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/*=================================================
+  Formulář
+  ================================================= */
+
+.input-item {
+  width: 100%;
+}
+
+.form input {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  color: var(--base-color);
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid var(--accent-color);
+  outline: none;
+}
+
+.form input::placeholder {
+  color: var(--base-color);
+}
+
+form input[type="submit"] {
+  width: auto;
+  margin: 0.5rem 0;
+  padding: 1rem 4rem;
+  color: var(--gray-color-1);
+  background-color: var(--accent-color);
+  border: none;
+}
+
+form input[type="checkbox"] {
+  width: auto;
+  margin: 0.5rem 0;
+  padding: 1rem 4rem;
+}
+
+/* Stylování upozornění */
+.result-text {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+}
+.valid {
+  color: var(--accent-color-5);
+}
+.invalid {
+  color: var(--accent-color-4);
+}
+
+/*=================================================
+  Hero image
+  ================================================= */
+.hero-image {
+  width: 100%;
+  height: 32vh;
+  background: #9cca5a no-repeat center/cover url(./images/Hero-image.png);
+}
+
+/*=================================================
+  Tlačítko "Zpět nahoru"
+  ================================================= */
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  width: 56px;
+  height: 56px;
+  font-size: 1rem;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
